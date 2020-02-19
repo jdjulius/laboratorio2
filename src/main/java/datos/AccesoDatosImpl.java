@@ -13,10 +13,7 @@ import java.util.List;
  * @author ENA-PC1
  */
 public class AccesoDatosImpl implements AccesoDatos{
-
-    public AccesoDatosImpl() {
-    }
-
+    
     @Override
     public boolean existe(String nombreArchivo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

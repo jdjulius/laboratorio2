@@ -9,6 +9,10 @@ package excepciones;
  *
  * @author ENA-PC1
  */
-public class LecturaDatosEx {
+public class LecturaDatosEx extends AccesoDatosEx {
+    
+    public LecturaDatosEx(String message) {
+        super(message);
+    }
     
 }

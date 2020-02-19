@@ -9,6 +9,10 @@ package excepciones;
  *
  * @author ENA-PC1
  */
-public class EscrituraDatosEx {
+public class EscrituraDatosEx extends AccesoDatosEx {
+    
+    public EscrituraDatosEx(String message) {
+        super(message);
+    }
     
 }
