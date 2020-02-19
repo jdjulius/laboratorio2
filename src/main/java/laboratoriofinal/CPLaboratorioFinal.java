@@ -5,13 +5,21 @@
  */
 package laboratoriofinal;
 
+import java.util.Scanner;
+import negocio.CatalogoPeliculas;
+
 /**
  *
  * @author ENA-PC1
  */
 public class CPLaboratorioFinal {
-    
+
+    Scanner scanner;
+    int opcion;
+    String nombre;
+    CatalogoPeliculas catalogoPeliculas;
+
     public static void main(String[] args) {
-        System.out.println("hola como estas");
+
     }
 }

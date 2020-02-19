@@ -5,10 +5,37 @@
  */
 package negocio;
 
+import datos.AccesoDatos;
+
 /**
  *
  * @author ENA-PC1
  */
-public class CatalogoPeliculasImpl {
-    
+public class CatalogoPeliculasImpl implements CatalogoPeliculas {
+
+    AccesoDatos datos;
+
+    public CatalogoPeliculasImpl() {
+    }
+
+    @Override
+    public void agregarPelicula(String nombrePelicula, String nombreArchivo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void listarPeliculas(String nombreArchivo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void buscarPelicula(String nombreArchivo, String buscar) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void iniciarArchivo(String nombreArchivo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
