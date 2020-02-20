@@ -16,7 +16,7 @@ public class CPLaboratorioFinal {
 
     static Scanner scanner;
     static int opcion;
-    static String nombre;
+    static String nombre = "C:\\Archivo_laboratorio2\\";
     CatalogoPeliculas catalogoPeliculas;
 
     public static void main(String[] args) {
