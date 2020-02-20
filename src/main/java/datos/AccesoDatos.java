@@ -18,7 +18,7 @@ public interface AccesoDatos {
 
     public boolean existe(String nombreArchivo);
 
-    public List<Pelicula> listar(String nombreArchivo, String nombre);
+    public List<Pelicula> listar(String nombreArchivo);
 
     public void escribir(Pelicula pelicula, String nombreArchivo, boolean anexar);
 

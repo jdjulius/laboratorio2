@@ -31,26 +31,21 @@ public class AccesoDatosImpl implements AccesoDatos {
     }
 
     @Override
-    public List<Pelicula> listar(String nombreArchivo, String nombre) {
+    public List<Pelicula> listar(String nombreArchivo) {
 
         List<Pelicula> peliculas = new ArrayList();
 
         File archivo = new File(nombreArchivo);
         try {
             BufferedReader entrada = new BufferedReader(new FileReader(archivo));
-            String lectura = entrada.readLine();
+            String lectura = "";
             while (lectura != null) {
                 lectura = entrada.readLine();
+                if (lectura != null){
+                    Pelicula p = new Pelicula(lectura);
+                    peliculas.add(p);
+                }
             }
-
-            String v[] = lectura.split("\n");
-
-            for (String n : v) {
-                Pelicula p = new Pelicula(n);
-                peliculas.add(p);
-            }
-
-            System.out.println(lectura);
             entrada.close();
             System.out.println("El archivo ha sido leido correctamente");
 
@@ -71,7 +66,6 @@ public class AccesoDatosImpl implements AccesoDatos {
         try {
             PrintWriter salida = new PrintWriter(new FileWriter(archivo, anexar));
             salida.println(pelicula.getNombre());
-            salida.println();
             salida.close();
             System.out.println("El archivo ha sido escrito correctamente");
 

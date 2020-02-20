@@ -29,7 +29,8 @@ public class CPLaboratorioFinal {
             System.out.println("Elije opcion:");
             System.out.println("1.- Iniciar catalogo peliculas");
             System.out.println("2.- Agregar peliculas");
-            System.out.println("3.- Buscar pelicula");
+            System.out.println("3.- Listar pelicula");
+            System.out.println("4.- Buscar pelicula");
             System.out.println("0.- Salir");
 
             opcion = Integer.parseInt(scanner.nextLine());
@@ -43,7 +44,8 @@ public class CPLaboratorioFinal {
 
                 if (opcion == 1) {
                     String n = scanner.nextLine();
-                    catalogoPeliculas.DATOS.crear(nombre + n);
+                    catalogoPeliculas.iniciarArchivo(nombre + n);
+                    //catalogoPeliculas.DATOS.crear(nombre + n);
                     System.out.println("CREADO CON EXITO");
 
                 } else if (opcion == 2) {
@@ -65,10 +67,29 @@ public class CPLaboratorioFinal {
                 }
 
             } else if (opcion == 2) {
-                System.out.println("opcion2");
+                System.out.println("INGRESE EL NOMBRE DE LA PELICULA:");
+                String nombrePelicula = scanner.nextLine();
+                System.out.println("INGRESE EL NOMBRE DE ARCHIVO DONDE GUARDARA:");
+                String nombreArchivo = scanner.nextLine();
+                catalogoPeliculas.agregarPelicula(nombrePelicula,nombre +  nombreArchivo);
+
+                System.out.println("SE AGREGO LA PELICULA CORRECTAMENTE");
 
             } else if (opcion == 3) {
-                System.out.println("opcion3");
+                System.out.println("INGRESE EL NOMBRE DE ARCHIVO A LISTAR:");
+                String nombreArchivo = scanner.nextLine();
+                catalogoPeliculas.listarPeliculas(nombre + nombreArchivo);
+
+                System.out.println("SE LISTO LAS PELICULAS CORRECTAMENTE");
+
+            } else if (opcion == 4) {
+                System.out.println("INGRESE EL NOMBRE DE ARCHIVO A LISTAR:");
+                String nombreArchivo = scanner.nextLine();
+                System.out.println("QUE QUIERE BUSCAR?");
+                String datoBuscar = scanner.nextLine();
+                catalogoPeliculas.buscarPelicula(nombre + nombreArchivo, datoBuscar);
+
+                System.out.println("SE BUSCO LAS PELICULAS CORRECTAMENTE");
 
             } else if (opcion == 0) {
                 System.out.println("opcion0");

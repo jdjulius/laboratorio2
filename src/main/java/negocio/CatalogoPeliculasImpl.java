@@ -7,6 +7,8 @@ package negocio;
 
 import datos.AccesoDatos;
 import datos.AccesoDatosImpl;
+import domain.Pelicula;
+import java.util.List;
 
 /**
  *
@@ -14,29 +16,44 @@ import datos.AccesoDatosImpl;
  */
 public class CatalogoPeliculasImpl implements CatalogoPeliculas {
 
-    
-
     public CatalogoPeliculasImpl() {
     }
 
     @Override
     public void agregarPelicula(String nombrePelicula, String nombreArchivo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        Pelicula p = new Pelicula(nombrePelicula);
+
+        DATOS.escribir(p, nombreArchivo, true);
+
     }
 
     @Override
     public void listarPeliculas(String nombreArchivo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        List<Pelicula> lista = DATOS.listar(nombreArchivo);
+
+        for (Pelicula pelicula : lista) {
+
+            System.out.println(pelicula);
+
+        }
+
     }
 
     @Override
     public void buscarPelicula(String nombreArchivo, String buscar) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        String dato = DATOS.buscar(nombreArchivo, buscar);
+        System.out.println("Se econtro: " + dato);
+
     }
 
     @Override
     public void iniciarArchivo(String nombreArchivo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        DATOS.crear(nombreArchivo);
+
     }
 
 }
