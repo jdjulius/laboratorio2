@@ -7,6 +7,7 @@ package laboratoriofinal;
 
 import java.util.Scanner;
 import negocio.CatalogoPeliculas;
+import negocio.CatalogoPeliculasImpl;
 
 /**
  *
@@ -17,10 +18,11 @@ public class CPLaboratorioFinal {
     static Scanner scanner;
     static int opcion;
     static String nombre = "C:\\Archivo_laboratorio2\\";
-    CatalogoPeliculas catalogoPeliculas;
+    static CatalogoPeliculas catalogoPeliculas;
 
     public static void main(String[] args) {
 
+        catalogoPeliculas = new CatalogoPeliculasImpl();
         scanner = new Scanner(System.in);
 
         while (true) {
@@ -33,7 +35,34 @@ public class CPLaboratorioFinal {
             opcion = Integer.parseInt(scanner.nextLine());
 
             if (opcion == 1) {
-                System.out.println("opcion1");
+                System.out.println("Elije opcion:");
+                System.out.println("1.- Crear");
+                System.out.println("2.- Borrar");
+                System.out.println("3.- Existe");
+                opcion = Integer.parseInt(scanner.nextLine());
+
+                if (opcion == 1) {
+                    String n = scanner.nextLine();
+                    catalogoPeliculas.DATOS.crear(nombre + n);
+                    System.out.println("CREADO CON EXITO");
+
+                } else if (opcion == 2) {
+                    String n = scanner.nextLine();
+                    catalogoPeliculas.DATOS.borrar(nombre + n);
+                    System.out.println("BORRADO CON EXITO");
+
+                } else if (opcion == 3) {
+                    String n = scanner.nextLine();
+                    boolean e = catalogoPeliculas.DATOS.existe(nombre + n);
+                    if (e) {
+                        System.out.println("EXISTE");
+
+                    } else {
+                        System.out.println("NO EXISTE");
+
+                    }
+
+                }
 
             } else if (opcion == 2) {
                 System.out.println("opcion2");

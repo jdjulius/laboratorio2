@@ -32,7 +32,7 @@ public class AccesoDatosImpl implements AccesoDatos {
 
     @Override
     public List<Pelicula> listar(String nombreArchivo, String nombre) {
-        
+
         List<Pelicula> peliculas = new ArrayList();
 
         File archivo = new File(nombreArchivo);
@@ -42,15 +42,14 @@ public class AccesoDatosImpl implements AccesoDatos {
             while (lectura != null) {
                 lectura = entrada.readLine();
             }
-            
-            String v [] = lectura.split("\n");
-            
+
+            String v[] = lectura.split("\n");
+
             for (String n : v) {
                 Pelicula p = new Pelicula(n);
-                peliculas.add(p);                
+                peliculas.add(p);
             }
-            
-            
+
             System.out.println(lectura);
             entrada.close();
             System.out.println("El archivo ha sido leido correctamente");
@@ -62,8 +61,7 @@ public class AccesoDatosImpl implements AccesoDatos {
         }
 
         return peliculas;
-        
-        
+
     }
 
     @Override
@@ -118,7 +116,7 @@ public class AccesoDatosImpl implements AccesoDatos {
     }
 
     @Override
-    public void crear(String nombreArchivo) throws AccesoDatosEx {
+    public void crear(String nombreArchivo){
 
         File archivo = new File(nombreArchivo);
         try {

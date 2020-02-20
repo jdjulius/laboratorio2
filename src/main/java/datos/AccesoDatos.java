@@ -24,7 +24,7 @@ public interface AccesoDatos {
 
     public String buscar(String nombreArchivo, String buscar);
 
-    public void crear(String nombreArchivo) throws AccesoDatosEx;
+    public void crear(String nombreArchivo);
 
     public void borrar(String nombreArchivo);
 

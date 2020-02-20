@@ -5,12 +5,17 @@
  */
 package negocio;
 
+import datos.AccesoDatos;
+import datos.AccesoDatosImpl;
+
 /**
  *
  * @author ENA-PC1
  */
 public interface CatalogoPeliculas {
 
+    public final static AccesoDatos DATOS = new AccesoDatosImpl();
+    
     public void agregarPelicula(String nombrePelicula, String nombreArchivo);
 
     public void listarPeliculas(String nombreArchivo);

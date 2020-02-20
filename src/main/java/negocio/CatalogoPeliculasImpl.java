@@ -6,6 +6,7 @@
 package negocio;
 
 import datos.AccesoDatos;
+import datos.AccesoDatosImpl;
 
 /**
  *
@@ -13,7 +14,7 @@ import datos.AccesoDatos;
  */
 public class CatalogoPeliculasImpl implements CatalogoPeliculas {
 
-    AccesoDatos datos;
+    
 
     public CatalogoPeliculasImpl() {
     }
